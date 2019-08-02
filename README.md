@@ -6,11 +6,11 @@ Mettre des marker sur cette carte pour repérer les Coworking de l'Auvergne
 
 ```⌛Temps estimé: 30min 2H00```
 
-*Le jeu de donné est fournis dans le fichier [datas.json](https://github.com/mastergoster/OpenStreetMap_leafletjs/datas.json)*
+*Le jeu de donné est fournis dans le fichier [datas.json](https://github.com/mastergoster/OpenStreetMap_leafletjs/blob/master/datas.json)*
 
 **Voici le rendu attendu :**
 
-![Image of Maps](https://github.com/mastergoster/OpenStreetMap_leafletjs/images/demo.png)
+![Image of Maps](https://github.com/mastergoster/OpenStreetMap_leafletjs/blob/master/images/demo.png)
 
 
 Pour ce faire voici les ressources:
