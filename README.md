@@ -1,8 +1,7 @@
 # OpenStreetMap_LeafletJs
 #### Html, Css, Js, (Api)
 
-Objectif : Mettre en place d'une carte OpenStreetMap sur un site web
-mettre des Markers sur cette carte pour repérer les Coworking de l'Auvergne  
+Objectif : Mise en place d'une carte OpenStreetMap sur un site web avec des Markers pour repérer les Coworking de l'Auvergne  
 ⚠️⚠️⚠️ Bien Consulter toutes les resources ⚠️⚠️⚠️  
 
 ```⌛Temps estimé: 30min à 2H00```
