@@ -4,7 +4,7 @@
 Objectif : Mettre en place d'une carte OpenStreetMap sur un site web
 Mettre des marker sur cette carte pour repérer les Coworking de l'Auvergne
 
-```⌛Temps estimé: 30min 2H00```
+```⌛Temps estimé: 30min à 2H00```
 
 *Le jeu de donné est fournis dans le fichier [datas.json](https://github.com/mastergoster/OpenStreetMap_leafletjs/blob/master/datas.json)*
 
