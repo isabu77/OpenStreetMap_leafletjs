@@ -2,7 +2,8 @@
 #### Html, Css, Js, (Api)
 
 Objectif : Mettre en place d'une carte OpenStreetMap sur un site web
-Mettre des marker sur cette carte pour repérer les Coworking de l'Auvergne
+mettre des Markers sur cette carte pour repérer les Coworking de l'Auvergne  
+⚠️⚠️⚠️ Bien Consulter toutes les resources ⚠️⚠️⚠️  
 
 ```⌛Temps estimé: 30min à 2H00```
 
