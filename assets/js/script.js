@@ -1,5 +1,9 @@
-[
-    {
+// exercice Aformac du 03/08/2019
+// OpenStreetMap avec Leaflet.js
+
+// on recopie la table des marqueurs 
+// car on ne peut pas charger le datas.json
+var villes = [{
         "nom": "T\u00e9l\u00e9centre - Aurillac",
         "adresse": "44 boulevard du Pont Rouge",
         "code_postal": "15000",
@@ -263,4 +267,67 @@
         "latitude": 45.758811,
         "longitude": 3.129791
     }
-]
+];
+
+// Fonction d'initialisation de la carte OpenStreetMap_LeafletJs
+// dans la page about
+function initMap() {
+    // On initialise la latitude et la longitude (centre de la carte)
+    // Paris  lat = 48.852969 lon = 2.349903
+    // Auvergne :
+    var lat = 45.778593;
+    var lon = 3.081186;
+
+    // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+    var macarte = L.map('map').setView([lat, lon], 11);
+
+    // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. 
+    // Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        // Il est toujours bien de laisser le lien vers la source des données
+        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+        minZoom: 1,
+        maxZoom: 8
+    }).addTo(macarte);
+
+    // On charge en Ajax les données des marqueurs qui sont dans datas.json sur le serveur :
+    //$.getJSON("/assets/js/datas.json", function(villes) {
+
+    // fonction callback au chargement du fichier json :
+    // le tableau json est utilisable tel quel, pas de json.parse
+    //villes = JSON.parse(data);
+    //villes = data;
+
+    //initialise les groupes de marqueurs
+    var markerClusters = L.markerClusterGroup();
+
+    // ajouter les marqueurs sur la carte
+    for (ville in villes) {
+        var marker = L.marker([villes[ville].latitude, villes[ville].longitude]);
+        //.addTo(macarte);
+        // construire le texte en html
+        var obj = villes[ville];
+        var bulle = "Nom : " + obj.nom + "<br/>" +
+            "Adresse : " + obj.adresse + "<br/>" +
+            "Code Postal : " + obj.code_postal + "<br/>" +
+            "Ville : " + obj.ville + "<br/>" +
+            "Tél : " + obj.tel + "<br/>" +
+            "e-mail : " + obj.email + "<br/>" +
+            "Site Web : " + obj.site_web + "<br/>" +
+            "Porteur : " + obj.porteur + "<br/>" +
+            "Latitude : " + obj.latitude + "<br/>" +
+            "Longitude : " + obj.longitude + "<br/>";
+
+        marker.bindPopup(bulle);
+
+        // ajout du marqueur aux groupes
+        markerClusters.addLayer(marker);
+    }
+
+    macarte.addLayer(markerClusters);
+    //});
+}
+
+window.onload = function() {
+    initMap();
+};
